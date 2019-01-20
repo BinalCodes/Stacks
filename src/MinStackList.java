@@ -25,10 +25,11 @@ public class MinStackList {
 	public Node pop() {
 		if(top ==null)
 			return null;
-		Node tmp = top;
+		Node tmp = top.next;
 		top.next = null;
+		Node popped = top;
 		top = tmp;
-		return tmp;
+		return popped;
 	}
 	public int getMin() {
 		if(top == null)
@@ -44,7 +45,10 @@ public class MinStackList {
 		stack.push(5);
 		stack.push(14);
 		System.out.println("Popped "+stack.pop().val);
+		System.out.println("Popped "+stack.pop().val);
+		System.out.println("Popped "+stack.pop().val);
 		stack.push(4);
+		System.out.println("Popped "+stack.pop().val);
 		System.out.println("Minimum element is "+stack.getMin());
 		stack.push(1);
 		stack.push(114);
